@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #slider-container {
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #slider {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .slider-buttons {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .slider-buttons button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .slider-buttons button:focus {
+        outline: none;
+      }
+
+      .slider-buttons button:hover {
+        text-decoration: underline;
+      }
+
+      .container_circles {
+        display: flex;
+        justify-content: space-between;
+        width: 15%;
+        height: 20px;
+        position: absolute;
+        bottom:10px;
+        right: calc(100%/2 - 10%);
+    }   
+        
+      .circle1, .circle2, .circle3{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #d1d1d1;
+        z-index: 30;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div id="slider-container">
+      <div class="container_circles">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+      </div>
+      <div id="slider"></div>
+
+      <div class="slider-buttons">
+        <button id="prevBtn" style="color: blue"><</button>
+        <button id="nextBtn" style="color: blue">></button>
+      </div>
+    </div>
+
+    <script>
+      const images = [
+        { src: "/assets/pizza.jpg", alt: "Image 1" },
+        { src: "/assets/pizza2.jpeg", alt: "Image 2" },
+        { src: "/assets/pizza3.jpeg", alt: "Image 3" },
+      ];
+
+      const slider = document.getElementById("slider");
+
+      // Crear los elementos de imagen y agregarlos al slider
+      images.forEach((image) => {
+        const imgElement = document.createElement("img");
+        imgElement.src = image.src;
+        imgElement.alt = image.alt;
+        imgElement.width = 500;
+        slider.appendChild(imgElement);
+      });
+
+      let slideIndex = 0;
+      const slideWidth =
+        document.querySelector("#slider-container").offsetWidth;
+
+      // Función para mostrar la diapositiva actual
+      function showSlide() {
+        slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+      }
+
+      // Función para avanzar a la siguiente diapositiva
+      function nextSlide() {
+        if (slideIndex === images.length - 1) {
+          slideIndex = 0;
+        } else {
+          slideIndex++;
+        }
+        showSlide();
+        resaltarCircle()
+      }
+
+      // Función para retroceder a la diapositiva anterior
+      function prevSlide() {
+        if (slideIndex === 0) {
+          slideIndex = images.length - 1;
+        } else {
+          slideIndex--;
+        }
+        showSlide();
+        resaltarCircle()
+      }
+
+      function resaltarCircle() {
+        if(slideIndex == 0) {
+            document.querySelector(".circle1").style.backgroundColor = "blue";
+            document.querySelector(".circle2").style.backgroundColor = "#d1d1d1";
+            document.querySelector(".circle3").style.backgroundColor = "#d1d1d1";
+        }
+        if(slideIndex == 1){
+            document.querySelector(".circle1").style.backgroundColor = "#d1d1d1";
+            document.querySelector(".circle2").style.backgroundColor = "blue";
+            document.querySelector(".circle3").style.backgroundColor = "#d1d1d1";
+        } 
+        if(slideIndex == 2){
+            document.querySelector(".circle1").style.backgroundColor = "#d1d1d1";
+            document.querySelector(".circle2").style.backgroundColor = "#d1d1d1";
+            document.querySelector(".circle3").style.backgroundColor = "blue";
+        }
+        console.log(slideIndex, document.querySelector(".circle1").style.backgroundColor)
+      }
+
+      // Event listeners para los botones de siguiente y anterior
+      document.getElementById("nextBtn").addEventListener("click", nextSlide);
+      document.getElementById("prevBtn").addEventListener("click", prevSlide);
+
+      // Mostrar la primera diapositiva al cargar la página
+
+      const slideInterval = 3000; // Intervalo de tiempo en milisegundos (3 segundos en este ejemplo)
+      let slideTimer;
+
+      // Función para iniciar el intervalo del slider
+      function startSlideInterval() {
+        slideTimer = setInterval(() => {
+          nextSlide();
+        }, slideInterval);
+      }
+
+      // Función para detener el intervalo del slider
+      function stopSlideInterval() {
+        clearInterval(slideTimer);
+      }
+
+      // Event listeners para iniciar y detener el intervalo del slider
+      document
+        .getElementById("slider-container")
+        .addEventListener("mouseenter", stopSlideInterval);
+      document
+        .getElementById("slider-container")
+        .addEventListener("mouseleave", startSlideInterval);
+
+      // Mostrar la primera diapositiva al cargar la página y empezar el intervalo del slider
+      showSlide();
+      startSlideInterval();
+      resaltarCircle()
+    </script>
+  </body>
+</html>
