@@ -7,7 +7,7 @@
 
 navbar {
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 30;
   background: rgb(211,211,211);
   background: linear-gradient(180deg, rgba(211,211,211,1) 0%, rgba(0,212,255,0) 100%);
@@ -60,7 +60,7 @@ navbar .navul .navli a:hover {
 }
 .title_hero {
   width: 50%;
-  z-index: 30;
+  z-index: 20;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -125,7 +125,6 @@ navbar .navul .navli a:hover {
   outline: none;
 }
 
-
 .container_circles {
   display: flex;
   justify-content: space-between;
@@ -157,3 +156,36 @@ section h2 {
   font-size: 3rem;
   text-align: center;
 }
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(3,400px);
+  margin: 0px auto 70px auto;
+
+  gap: 30px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  gap: 10px;
+}
+.card img{
+  width: 200px;
+}
+
+.card button{
+  width: 100px;
+  font-size: 20px;
+  padding:  0 10px;
+}
+
+footer{
+  height: 100px;
+}
+

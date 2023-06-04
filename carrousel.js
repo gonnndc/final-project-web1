@@ -1,7 +1,7 @@
 const images = [
-    { src: "/assets/pizza.jpg", alt: "Image 1" },
-    { src: "/assets/fideos.jpg", alt: "Image 2" },
-    { src: "/assets/plato3.jpg", alt: "Image 3" },
+    { src: "./assets/pizza.jpg", alt: "Image 1" },
+    { src: "./assets/fideos.jpg", alt: "Image 2" },
+    { src: "./assets/plato3.jpg", alt: "Image 3" },
 ];
 
 const slider = document.getElementById("slider");
