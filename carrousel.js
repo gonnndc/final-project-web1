@@ -1,7 +1,7 @@
 const images = [
-    { src: "./assets/pizza.jpg", alt: "Image 1" },
-    { src: "./assets/fideos.jpg", alt: "Image 2" },
-    { src: "./assets/plato3.jpg", alt: "Image 3" },
+    { src: "./assets/pizza.jpg", alt: "Pizza" },
+    { src: "./assets/fideos.jpg", alt: "Pastas" },
+    { src: "./assets/plato3.jpg", alt: "Plato fresco" },
 ];
 
 const slider = document.getElementById("slider");
@@ -48,23 +48,7 @@ function prevSlide() {
     resaltarCircle()
 }
 
-// function resaltarCircle() {
-//     if (slideIndex == 0) {
-//         document.querySelector(".circle1").style.backgroundColor = "#fafafa";
-//         document.querySelector(".circle2").style.backgroundColor = "#716D72";
-//         document.querySelector(".circle3").style.backgroundColor = "#716D72";
-//     }
-//     if (slideIndex == 1) {
-//         document.querySelector(".circle1").style.backgroundColor = "#716D72";
-//         document.querySelector(".circle2").style.backgroundColor = "#fafafa";
-//         document.querySelector(".circle3").style.backgroundColor = "#716D72";
-//     }
-//     if (slideIndex == 2) {
-//         document.querySelector(".circle1").style.backgroundColor = "#716D72";
-//         document.querySelector(".circle2").style.backgroundColor = "#716D72";
-//         document.querySelector(".circle3").style.backgroundColor = "#fafafa";
-//     }
-// }
+
 function resaltarCircle() {
     const circles = document.querySelectorAll(".circle");
     const activeCircleColor = "#fafafa";
@@ -84,7 +68,6 @@ document.getElementById("nextBtn").addEventListener("click", nextSlide);
 document.getElementById("prevBtn").addEventListener("click", prevSlide);
 
 // Mostrar la primera diapositiva al cargar la página
-
 const slideInterval = 3000; // Intervalo de tiempo en milisegundos (3 segundos en este ejemplo)
 let slideTimer;
 
@@ -95,20 +78,6 @@ function startSlideInterval() {
     }, slideInterval);
 }
 
-// // Función para detener el intervalo del slider
-// function stopSlideInterval() {
-//     clearInterval(slideTimer);
-// }
-
-// // Event listeners para iniciar y detener el intervalo del slider
-// document
-//     .getElementById("slider-container")
-//     .addEventListener("mouseenter", stopSlideInterval);
-// document
-//     .getElementById("slider-container")
-//     .addEventListener("mouseleave", startSlideInterval);
-
-// Mostrar la primera diapositiva al cargar la página y empezar el intervalo del slider
 showSlide();
 startSlideInterval();
 resaltarCircle()

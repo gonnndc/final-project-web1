@@ -9,11 +9,11 @@ const main = () => {
 
         if (currentScrollTop < lastScrollTop) {
           
-          if (window.pageYOffset > 600) {
+          if (window.pageYOffset > 400) {
               navbar.style.position = 'fixed';
           } 
       } else {
-        navbar.style.position = 'sticky';
+          navbar.style.position = 'sticky';
     }
       
       lastScrollTop = currentScrollTop;

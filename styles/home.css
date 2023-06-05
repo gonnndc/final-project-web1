@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Neucha", cursive;
+  font-family: "Poppins", sans-serif;
 }
 
 navbar {
@@ -23,19 +23,35 @@ navbar {
   max-width: 1200px;
 }
 
+.logo{
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* Define el punto de partida de la rotación */
+  }
+  to {
+    transform: rotate(360deg); /* Define el punto final de la rotación */
+  }
+}
+
+.logo img{
+  width: 150px;
+}
+
 .logo img{
   width: 150px;
 }
 
 navbar .navul {
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
   font-weight: 300;
   font-size: 25px;
-  font-family: 'Roboto', sans-serif;
 }
 
 navbar .navul .navli:hover {
@@ -45,8 +61,6 @@ navbar .navul .navli:hover {
 navbar .navul .navli a {
   text-decoration: none;
   color: #000;
-  font-family: 'Roboto', sans-serif;
-
 }
 
 navbar .navul .navli a:hover {
@@ -75,7 +89,6 @@ navbar .navul .navli a:hover {
 .title_hero h1 {
   margin-left: 50px;
   font-size: 4rem;
-  font-family: "Neucha", cursive;
   line-height: 100px;
   text-align: center;
 }
@@ -132,7 +145,7 @@ navbar .navul .navli a:hover {
   height: 30px;
   position: absolute;
   bottom: 10px;
-  right: calc(100% / 2 - 10%);
+  right: calc(100% / 2 - 5%);
 }
 
 .circle1,
@@ -185,7 +198,44 @@ section h2 {
   padding:  0 10px;
 }
 
-footer{
-  height: 100px;
+.footer {
+  background-color: #444444;
+  color: #fff;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 20%;
 }
 
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.footer__title {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.footer__rrss--container {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+}
+
+.footer__rrss {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+
+.footer__rrss span{
+  margin-right:10px;
+}
