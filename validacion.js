@@ -24,6 +24,7 @@ const validar = () => {
     const textoContainerMensaje = document.createElement('p')
     const textoContainerErrores = document.createElement('p')
 
+
     if (mensajes.firstChild) {
         mensajes.firstChild.remove();
     }
@@ -47,6 +48,7 @@ const validar = () => {
         textoContainerErrores.innerHTML += 'Nombre invalido, intente nuevamente'
         textoContainerErrores.innerHTML += '<br>'
         nombreInput.style.border = '1px solid red';
+        nombreInput.value = ''
         validado = false
     }
 
@@ -58,6 +60,8 @@ const validar = () => {
         textoContainerErrores.innerHTML += 'Mensaje no valido, intente nuevamente \n'
         textoContainerErrores.innerHTML += '<br>'
         mensajeInput.style.border = '1px solid red';
+        mensajeInput.value = ''
+
         validado = false
     }
 
@@ -69,6 +73,7 @@ const validar = () => {
         textoContainerErrores.innerHTML += 'Email invalido, intente nuevamente\n'
         textoContainerErrores.innerHTML += '<br>'
         emailInput.style.border = '1px solid red';
+        emailInput.value = ''
         validado = false
     }
 
@@ -79,6 +84,10 @@ const validar = () => {
         mensajes.style.fontSize = '20px'
         mensajes.style.fontWeight = 'bold'
         mensajes.style.color = 'green'
+        nombreInput.value = ''
+        mensajeInput.value = ''
+        emailInput.value = ''
+        nombreInput.focus()
         return validado
     } else {
         container.appendChild(textoContainerErrores)
@@ -89,5 +98,5 @@ const validar = () => {
         return validado
     }
 
-
 }
+
