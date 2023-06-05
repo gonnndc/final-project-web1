@@ -85,6 +85,10 @@ section h2{
     color: #c7ab10;
 }
 
+
+
+
+
 .wrapper_image_descripcion{
     display: flex;
     width: 100%;
@@ -106,3 +110,45 @@ section h2{
     font-size: 20px;
     padding: 0 30px;
 }
+
+.footer {
+    background-color: #444444;
+    color: #fff;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 20%;
+  }
+  
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+  }
+  
+  .footer__title {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .footer__rrss--container {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+  }
+  
+  .footer__rrss {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  
+  .footer__rrss span{
+    margin-right:10px;
+  }

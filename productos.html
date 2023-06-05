@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="styles/productos.css" />
+    <script defer src="index.js"/></script>
+  </head>
+  <body>
+    <navbar>
+      <div class="wrapper">
+        <div class="logo">
+          <img src="./assets/logo.svg" alt="logo" />
+        </div>
+        <ul class="navul">
+          <li class="navli">
+            <a href="./final-project-web1">Home</a>
+          </li>
+          <li class="navli">
+            <a href="./productos.html">Productos</a>
+          </li>
+          <li class="navli">
+            <a href="./reserva.html">Reserva</a>
+          </li>
+          <li class="navli">
+            <a href="./nosotros.html">Nosotros</a>
+          </li>
+        </ul>
+      </div>
+    </navbar>
+    <section>
+        <h2>Productos</h2>
+      <div class="wrapper-section">
+        <article class="card-horizontal">
+          <div class="card-horizontal__img">
+            <img src="./assets/fideosrojos.jpeg" alt="" srcset="" />
+          </div>
+          <div class="wrapper-descripcion">
+            <h3>Bucatini rojos con oliva</h3>
+            <p>
+              Esta especialidad de la cocina italiana combina la suavidad y
+              textura única de los bucatini con una salsa roja de tomate rica y
+              sabrosa, realzada con el sabor distintivo de las olivas.
+            </p>
+          </div>
+        </article>
+        <article class="card-horizontal">
+            <div class="card-horizontal__img">
+              <img src="./assets/pizza2.jpeg" alt="" srcset="" />
+            </div>
+            <div class="wrapper-descripcion">
+              <h3>Pizza Margarita</h3>
+              <p>
+                Deliciosa pizza clásica de origen italiano que combina una base de masa crujiente con tomate fresco, queso mozzarella y hojas de albahaca. Su sabor simple y equilibrado hace de la Margarita una opción popular y satisfactoria para los amantes de la pizza tradicional.
+              </p>
+            </div>
+          </article>
+          <article class="card-horizontal">
+            <div class="card-horizontal__img">
+              <img src="./assets/nioquis.jpeg" alt="" srcset="" />
+            </div>
+            <div class="wrapper-descripcion">
+              <h3>Gnocchi de papa con nuez</h3>
+              <p>
+                Cada bocado de nuestros Gnocchi con Nuez y Brócoli te sorprenderá con la suavidad de los gnocchi y la frescura del brócoli. La salsa cremosa de nuez añade una capa adicional de sabor y una textura crujiente gracias a los trozos de nueces tostadas. Es una combinación equilibrada que deleitará tus sentidos y te dejará satisfecho.
+              </p>
+            </div>
+          </article>
+          <article class="card-horizontal">
+            <div class="card-horizontal__img">
+              <img src="./assets/agnolotis.jpg" alt="" srcset="" />
+            </div>
+            <div class="wrapper-descripcion">
+              <h3>Agnolotis con Salsa Roja</h3>
+              <p>
+                Los Agnolotis con Salsa Roja son perfectos para aquellos que buscan una comida reconfortante y llena de sabores auténticos. Ven y disfruta de esta combinación irresistible de pasta y salsa en cada bocado. 
+              </p>
+            </div>
+          </article>
+        </article><article class="card-horizontal">
+            <div class="card-horizontal__img">
+              <img src="./assets/lasagna.jpeg" alt="" srcset="" />
+            </div>
+            <div class="wrapper-descripcion">
+              <h3>Lasagna</h3>
+              <p>
+                Cada capa se complementa con ingredientes como queso ricotta, queso mozzarella y especias, creando un plato gratinado y lleno de sabor. La lasaña es conocida por su textura suave y reconfortante, convirtiéndola en una opción popular en todo el mundo para disfrutar de un festín de pasta
+              </p>
+            </div>
+          </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <h4 class="footer__title">GDC</h4>
+      <div class="footer__rrss--container">
+        <div class="footer__rrss">
+          <span>Instagram</span>
+          <img src="./assets/insta.png" width="28" alt="instagram icon" />
+        </div>
+        <div class="footer__rrss">
+          <span>Linkedin</span>
+          <img src="./assets/linkedin.png" width="28" alt="" />
+        </div>
+        <div class="footer__rrss">
+          <span>Github</span>
+          <img src="./assets/github.svg" width="28" alt="github icon" />
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
